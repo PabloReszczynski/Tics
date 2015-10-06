@@ -6,7 +6,7 @@
   <body>
     <div class="container">
       <?php
-        echo "<h1> Bienvenido " $_SESSION["user"] "!</h1>";
+        echo "<h1> Bienvenido user!</h1>";
       ?>
     </div>
 
