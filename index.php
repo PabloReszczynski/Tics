@@ -1,6 +1,12 @@
+<?php
+  session_start();
+  if (isset($_SESSION["user"])){
+    header("location: welcome.php");
+  }
+?>
 <html lang="es">
   <head>
-    <title>placeholder</title>
+    <title>index</title>
     <meta charset="utf-8">
   </head>
   <body>
@@ -15,6 +21,18 @@
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
+      <?php
+        $error = '<span>Fallo en el inicio de sesión.</span>';
+        if (isset($_POST["username"] && isset($_POST["pass"])){
+          if ($_POST["username"] == "user" && $_POST["pass"] == "pass"){
+            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["pass"] = $_POST["pass"];
+          }
+          else{
+            echo $error;
+          }
+        }
+      ?>
     </div>
   </body>
 </html>
