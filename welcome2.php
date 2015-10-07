@@ -56,35 +56,24 @@
 			</style>
   </head>
   <body>
-    <div id="header">
-			<ul class="nav">
-				<li><a href="">Inicio</a></li>
-				<li><a href="">okaoka</a>
-					<ul>
-						<li><a href="">pablo<3</a></li>
-						<li><a href="">paulii</a></li>
-						<li><a href="">nelsonnss</a></li>
-						<li><a href=""></a>
-							<ul>
-								<li><a href="">Submenu1</a></li>
-								<li><a href="">Submenu2</a></li>
-								<li><a href="">Submenu3</a></li>
-								<li><a href="">Submenu4</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><a href="">Acerca de</a>
-					<ul>
-						<li><a href="">Submenu1</a></li>
-						<li><a href="">Submenu2</a></li>
-						<li><a href="">Submenu3</a></li>
-						<li><a href="">Submenu4</a></li>
-					</ul>
-				</li>
-				<li><a href="">Contacto</a></li>
-			</ul>
-		</div>
+  	<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar tutorias!">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Buscar</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+    <div>
+    	<ul class="nav nav-pills nav-stacked">
+  <li role="presentation" class="active"><a href="#">Inicio</a></li>
+  <li role="presentation"><a href="#">Perfil de Usuario</a></li>
+  <li role="presentation"><a href="#">¿Quienes somos?</a></li>
+  <li role="presentation"><a href="#">Contacto</a></li>
+	</ul>	
+	</div>
     <div class="container">
       <?php
         echo "<h1> Bienvenido user!</h1>";
