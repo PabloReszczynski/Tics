@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])){
 
 <div>
     <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active"><a href="#">Inicio</a></li>
+        <li role="presentation" class="active"><a href="welcome2.php">Inicio</a></li>
         <li role="presentation"><a href="#">Perfil de Usuario</a></li>
         <li role="presentation"><a href="#">¿Quienes somos?</a></li>
         <li role="presentation"><a href="#">Contacto</a></li>
@@ -52,9 +52,5 @@ if (!isset($_SESSION['user'])){
        </table>
       </form>
 </div>
-
-<!--volver a pagina principal -->
-<a href="welcome2.php">Volver a pagina principal</a>
-
 </body>
 </html>
