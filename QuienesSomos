@@ -30,6 +30,8 @@
     <p> Donec gravida risus ac quam efficitur, faucibus volutpat velit eleifend. Phasellus bibendum enim nec neque sagittis, ac mollis urna rhoncus. Vivamus auctor nulla tristique consequat pretium.</p>
     </div>
     
+    <!--volver a pagina principal -->
+<a href="principal.php">Volver a pagina principal</a>
   </body>
 </html>
     
