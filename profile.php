@@ -48,7 +48,7 @@
 </div>
 
 <!--volver a pagina principal -->
-<a href="welcome2.php">Volver  pagina principal</a>
+<a href="welcome2.php">Volver a pagina principal</a>
 
 </body>
 </html>
