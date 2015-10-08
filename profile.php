@@ -46,5 +46,9 @@
        </table>
       </form>
 </div>
+
+<!--volver a pagina principal -->
+<a href="welcome2.php">Volver  pagina principal</a>
+
 </body>
 </html>
