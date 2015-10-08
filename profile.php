@@ -8,12 +8,21 @@
 <body>
     <h1>Mi Perfil</h1>
 
+<div>
+    <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="#">Inicio</a></li>
+        <li role="presentation"><a href="#">Perfil de Usuario</a></li>
+        <li role="presentation"><a href="#">¿Quienes somos?</a></li>
+        <li role="presentation"><a href="#">Contacto</a></li>
+    </ul>	
+</div>
+
 <div class="media-left">
     <a href="#">
       <img class="media-object" src="..." alt="...">
     </a>
 </div>
-    
+
 <div align= "center">
 
  <form >
