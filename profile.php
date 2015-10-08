@@ -2,35 +2,30 @@
 <html>
 <head>
 	<title>Usuario</title>
-	<meta charset="utf-8">
 </head>
 
 <body>
-	<?php
-session_start();
-if (!isset($_SESSION['user'])){
-	header("Location: index.php");
-	}
-?>
     <h1>Mi Perfil</h1>
 
-<div>
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active"><a href="welcome2.php">Inicio</a></li>
-        <li role="presentation"><a href="#">Perfil de Usuario</a></li>
-        <li role="presentation"><a href="#">¿Quienes somos?</a></li>
-        <li role="presentation"><a href="#">Contacto</a></li>
-    </ul>	
+<div>     
+
+
+<div align= "left">
+  <table>
+    <tr>
+    <td> <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a></td></tr>
+    <tr>
+    <td><form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input name="uploadedfile" type="file" />
+<input type="submit" value="Subir archivo" />
+</form></td></tr>
+  </table>
 </div>
 
-<div class="media-left">
-    <a href="#">
-      <img class="media-object" src="..." alt="...">
-    </a>
-</div>
 
 <div align= "center">
-
  <form >
        <table>
         <tr>
@@ -46,11 +41,16 @@ if (!isset($_SESSION['user'])){
          <td>E-mail de contacto :</td> <td>pauli.escobar@yahoo.cl</td> <td><input type="text" name="email"><br>
         </tr>
         <tr>
-  <td></td> <td><input type="submit" value="Cambiar"></td>
+  <td></td> <td><input type="submit" value="Submit"></td>
         </tr>
         
        </table>
       </form>
 </div>
+
+
+</div>
+
+
 </body>
 </html>
