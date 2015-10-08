@@ -22,7 +22,7 @@ if (!isset($_SESSION['user'])){
 </div><!-- /.row -->
     <div>
     	<ul class="nav nav-pills nav-stacked">
-  <li role="presentation" class="active"><a href="#">Inicio</a></li>
+  <li role="presentation" class="active"><a href="welcome2.php">Inicio</a></li>
   <li role="presentation"><a href="#">Perfil de Usuario</a></li>
   <li role="presentation"><a href="#">¿Quienes somos?</a></li>
   <li role="presentation"><a href="#">Contacto</a></li>
