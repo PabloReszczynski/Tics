@@ -22,7 +22,7 @@ if (!isset($_SESSION['user'])){
 </div><!-- /.row -->
     <div>
     	<ul class="nav nav-pills nav-stacked">
-  <li role="presentation" class="active"><a href="#">Inicio</a></li>
+  <li role="presentation" class="active"><a href="welcome2.php">Inicio</a></li>
   <li role="presentation"><a href="#">Perfil de Usuario</a></li>
   <li role="presentation"><a href="#">¿Quienes somos?</a></li>
   <li role="presentation"><a href="#">Contacto</a></li>
@@ -35,9 +35,6 @@ if (!isset($_SESSION['user'])){
     <p>yadayada sodales, risus non convallis lacinia, metus enim eleifend ligula, ac tempus purus ligula in nulla. Vivamus tincidunt, sapien nec aliquam vestibulum, diam est lobortis lorem, ut dignissim elit augue vestibulum risus. Curabitur mattis quam urna, in finibus felis mattis a.</p>
     <p> Donec gravida risus ac quam efficitur, faucibus volutpat velit eleifend. Phasellus bibendum enim nec neque sagittis, ac mollis urna rhoncus. Vivamus auctor nulla tristique consequat pretium.</p>
     </div>
-    
-    <!--volver a pagina principal -->
-<a href="principal.php">Volver a pagina principal</a>
   </body>
 </html>
     
