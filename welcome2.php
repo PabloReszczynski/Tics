@@ -21,7 +21,9 @@ header("Location: index.php");
   <!-- NAVBAR -->
   <nav class="navbar navbar-default">
       <div class="navbar-header">
-          <a class="navbar-brand" href="welcome2.php">Inicio</a>
+          <a class="navbar-brand" href="welcome2.php">
+              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          </a>
       </div>
       <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -33,7 +35,9 @@ header("Location: index.php");
               <div class="form-group">
                   <input type="text" class="form-control" placeholder="Buscar Tutorías">
               </div>
-              <button type="submit" class="btn btn-default">Buscar</button>
+              <button type="submit" class="btn btn-default">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
           </form>
       </div>
   </nav>
