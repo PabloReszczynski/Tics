@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if (isset($_SESSION["user"]) && $_SESSION["user"] === "user"){
-    header("location:"."/~pablore/Tics/Tics"."/welcome2.php");
+  if (isset($_SESSION["user"])){
+    header("location:./welcome2.php");
   }
 ?>
 <html lang="es">
@@ -23,7 +23,7 @@
       <div class="container">
     <div class="row">
 		<div class="span12">
-			<form class="form-horizontal" action='' method="post">
+			<form class="form-horizontal" action="./welcome2.php" method="post">
 			  <fieldset>
 			    <div id="legend">
 			      <legend class="">Login</legend>
@@ -56,7 +56,7 @@
       <?php
         $error = '<span>Fallo en el inicio de sesión.</span>';
 
-        if (isset($_POST["username"]) && isset($_POST["pass"])){
+        /*if (isset($_POST["username"]) && isset($_POST["pass"])){
             if ($_POST["username"] === "user" && $_POST["pass"] === "pass"){
                 $_SESSION["user"] = $_POST["username"];
                 $_SESSION["pass"] = $_POST["pass"];
@@ -64,6 +64,11 @@
             else{
                 echo $error;
             }
+        }*/
+
+        if (isset($_SESSION["error"]) && $_SESSION["error"]==="error"){
+          echo $error;
+          session_destroy();
         }
       ?>
     </div>

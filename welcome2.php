@@ -1,7 +1,16 @@
 <?php
+require("functions.php");
 session_start();
-if (!isset($_SESSION['user'])){
-header("Location: index.php");
+if(!isset($_SESSION["user"])){
+  if(checkLogIn($_POST)){
+    $_SESSION["user"] = $_POST["username"];
+    $_SESSION["pass"] = $_POST["pass"];
+    $_SESSION["error"] = "no";
+  }
+  else{
+    $_SESSION["error"] = "error";
+    header("Location: index.php");
+  }
 }
 ?>
 <html lang="es">
@@ -26,6 +35,7 @@ header("Location: index.php");
       <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
               <li><a href="profile.php">Perfil</a></li>
+              <li><a href="listaTutorias.php">Tutorías</a></li>
               <li><a href="quienesSomos.php">Quienes somos</a></li>
               <li><a href="#">Contacto</a></li>
           </ul>
@@ -35,6 +45,9 @@ header("Location: index.php");
               </div>
               <button type="submit" class="btn btn-default">Buscar</button>
           </form>
+          <ul class="nav navbar-right">
+            <li><a href="./closeSession.php">Cerrar sesión</a></li>
+          </ul>
       </div>
   </nav>
   <!-- -->
@@ -42,6 +55,7 @@ header("Location: index.php");
       <div class="col-lg-3">
           <?php
             echo "<h1> Bienvenido user!</h1>";
+            //session_destroy(); //Para poder cerrar la sesión y testear el inicio de sesión
           ?>
       </div>
       <div class="col-lg-6" style="border: 1px solid #ccc; height: 100%;">
