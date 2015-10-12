@@ -14,6 +14,7 @@
     <style>
         body{
             font-family: "Open Sans", sans-serif;
+            text-align: center;
         }
     </style>
   </head>
@@ -45,7 +46,7 @@
 			    <div class="control-group">
 			      <!-- Button -->
 			      <div class="controls">
-			        <button class="btn btn-success">Iniciar Sesión</button>
+			        <button class="btn btn-default">Iniciar Sesión</button>
 			      </div>
 			    </div>
 			  </fieldset>

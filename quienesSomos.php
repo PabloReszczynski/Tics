@@ -42,7 +42,7 @@
                   </div>
                   <button type="submit" class="btn btn-default">Buscar</button>
               </form>
-              <ul class="nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
                 <li><a href="./closeSession.php">Cerrar sesión</a></li>
               </ul>
           </div>
