@@ -1,3 +1,8 @@
+<?php
+    require("functions.php");
+    session_start();
+    redirectError();
+?>
 <html lang="es">
   <head>
     <title>Mi Perfil</title>
@@ -26,6 +31,7 @@
       <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
               <li class="active"><a href="profile.php">Perfil</a></li>
+              <li><a href="listaTutorias.php">Tutorías</a></li>
               <li><a href="quienesSomos.php">Quienes somos</a></li>
               <li><a href="#">Contacto</a></li>
           </ul>
@@ -37,6 +43,9 @@
                   <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
               </button>
           </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./closeSession.php">Cerrar sesión</a></li>
+          </ul>
       </div>
   </nav>
   <!-- -->

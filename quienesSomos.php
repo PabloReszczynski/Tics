@@ -1,8 +1,7 @@
 <?php
+    require("functions.php");
     session_start();
-    if (!isset($_SESSION['user'])){
-        header("Location: index.php");
-    }
+    redirectError();
 ?>
 <html lang="es">
   <head>
@@ -35,6 +34,7 @@
           <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
                   <li><a href="profile.php">Perfil</a></li>
+                  <li><a href="listaTutorias.php">Tutorías</a></li>
                   <li class="active"><a href="quienesSomos.php">Quienes somos</a></li>
                   <li><a href="#">Contacto</a></li>
               </ul>
@@ -46,11 +46,15 @@
                       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                   </button>
               </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="./closeSession.php">Cerrar sesión</a></li>
+              </ul>
           </div>
       </nav>
       <!-- -->
         <div class="container">
             <h1 style="text-align: center;">Quienes Somos</h1>
+            <br>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
