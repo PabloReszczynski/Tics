@@ -46,7 +46,7 @@
                       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                   </button>
               </form>
-              <ul class="nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
                 <li><a href="./closeSession.php">Cerrar sesión</a></li>
               </ul>
           </div>
