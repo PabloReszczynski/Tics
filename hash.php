@@ -138,20 +138,4 @@ function pbkdf2($algorithm, $password, $salt, $count, $key_length, $raw_output =
 }
 ?>
 
-<html>
-<head>
-<title>hash</title>
-</head>
-<body>
-    <form method="post" action="hash.php">
-        password: <input type="text" name="pass">
-        <button type="submit">Enviar</button>
-    </form>
-    <?php
-        if (isset($_POST['pass'])){
-            echo '<pre>'.create_hash($_POST['pass']).'</pre>';
-        }
-    ?>
-</body>
-</html>
     

@@ -14,7 +14,7 @@
     <body>
         <h1 style="text-align: center;">Formulario de registro</h1>
         <div class="col-lg-4">
-            <form>
+            <form method='post' action="registro.php">
                 <div class="form-group">
                     <label for="Nombre">Nombre:</label>
                     <input type="text" name="nombre" class="form-control"/>
@@ -51,14 +51,21 @@
 require('connect.php');
 require('hash.php');
 
-$name = $_POST['nombre'];
-$lastname = $_POST['apellido'];
-$email = $_POST['email'];
-$avatar = $_POST['avatar'];
-$username = $_POST['username'];
-$password = create_hash($_POST['password']);
-$timestamp = date('m/d/Y h:i:s a', time());
-
-$col = [$name, $lastname, $email, $avatar, $username, $password, $timestamp];
-insert_users($col);
+if (isset($_POST['nombre'])){
+    
+    $col = array(
+        0 => $_POST['nombre'],
+        1 => $_POST['apellido'],
+        2 => $_POST['email'],
+        3 => $_POST['avatar'],
+        4 => $_POST['username'],
+        5 => create_hash($_POST['password']),
+        6 => 0,
+        7 => date('m/d/Y h:i:s a', time())
+    );
+    
+    insert_users($col);
+    
+    mysqli_close($conn);
+}
 ?>

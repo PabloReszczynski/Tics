@@ -1,5 +1,5 @@
 <?php
-    $servername = "theawesometool.koding.io";
+    $servername = "localhost";
     $username = "root";
     $password = "chingo";
     $dbname = "pablore";
@@ -11,21 +11,20 @@
     }
 
     function insert_users($columns){
-
-        if (mysqli_query($conn,
-            "select * from Users where username = $columns[4]"
-        ) == 1){
-            echo "Nombre de usuario ya está ocupado.";
-        }
-        else {
-            $insert = "insert into Users(nombre, apellido, avatar, email, username, password, status, timestamp)
-                    values ('$colums[0]', '$colums[1]', '$colums[2]', '$colums[3]', '$colums[4]', '$colums[5]', '$colums[6]', '$colums[7]');";
+        
+        $select = "select * from Users where username = $columns[0]";
+        if (mysqli_query($conn, $select) != 1){
+            $insert = "insert into Users (nombre, apellido, avatar, email, username, password, status, timestamp)
+            values ('$colums[0]', '$colums[1]', '$colums[2]', '$colums[3]', '$colums[4]', '$colums[5]', $colums[6], $colums[7]);";
             if (mysqli_query($conn, $insert)){
-                echo "Datos guardados exitosamente.";
+                echo "<span style='color: green;'>Datos guardados exitosamente.</span>";
             }
             else{
-                echo "Error guardando los datos";
+                echo "<span style='color: red;'>Error guardando los datos</span>";
             }
+        }
+        else {
+            echo "Nombre de usuario ya está ocupado.";
         }
     }
 ?>
