@@ -44,9 +44,7 @@
                 </div>
             </form>
         </div>
-    </body>
-</html>
-
+        <div class="col-lg-4">
 <?php
 require('connect.php');
 require('hash.php');
@@ -54,14 +52,14 @@ require('hash.php');
 if (isset($_POST['nombre'])){
     
     $col = array(
-        0 => $_POST['nombre'],
-        1 => $_POST['apellido'],
-        2 => $_POST['email'],
-        3 => $_POST['avatar'],
-        4 => $_POST['username'],
-        5 => create_hash($_POST['password']),
-        6 => 0,
-        7 => date('m/d/Y h:i:s a', time())
+        'nombre'    => $_POST['nombre'],
+        'apellido'  => $_POST['apellido'],
+        'email'     => $_POST['email'],
+        'avatar'    => $_POST['avatar'],
+        'username'  => $_POST['username'],
+        'password'  => create_hash($_POST['password']),
+        'status'    => 0,
+        'timestamp' => date('m/d/Y h:i:s a', time())
     );
     
     insert_users($col);
@@ -69,3 +67,8 @@ if (isset($_POST['nombre'])){
     mysqli_close($conn);
 }
 ?>
+        </div>
+    </body>
+</html>
+
+
