@@ -27,13 +27,8 @@
                 <div class="line"><label for="pwd">Password *: </label><input type="password" id="pwd" /></div>
                 <!-- You may want to consider adding a "confirm" password box also -->
                 <div class="line"><label for="surname">Surname *: </label><input type="text" id="surname" /></div>
-                <div class="line"><label for="other_names">Other Names *: </label><input type="text" id="names" /></div>
-                <div class="line"><label for="dob">Date of Birth *: </label><input type="text" id="dob" /></div>
                 <div class="line"><label for="email">Email *: </label><input type="email" id="email" /></div>
                 <!-- Valid input types: http://www.w3schools.com/html5/html5_form_input_types.asp -->
-                <div class="line"><label for="tel">Telephone: </label><input type="text" id="tel" /></div>
-                <div class="line"><label for="add">Address *: </label><input type="text" id="add" /></div>
-                <div class="line"><label for="ptc">Post Code *: </label><input type="text" id="ptc" /></div>
                 <div class="line submit"><input type="submit" value="Submit" /></div>
  
                 <p>Note: Please make sure your details are correct before submitting form and that all fields marked with * are completed!.</p>
@@ -41,3 +36,35 @@
         </div>
     </body>
 </html>
+
+<?php
+include ("connect.php");
+if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
+   echo "Oops! Username is already in use!";
+}
+else if($_POST['password'] != $_POST['retype-password']){
+   echo "Oops! The two entered passwords don`t match!";
+}
+else if(strlen($_POST['username']) > 15){
+   echo "Oops! Username is too long!";
+}
+else if(strlen($_POST['username']) < 6){
+   echo "Oops! Username is too short!";
+}
+else if(strlen($_POST['password']) > 15){
+   echo "Oops! Password is too long!";
+}
+else if(strlen($_POST['password']) < 6){
+   echo "Oops! Password is too short!";
+}
+else if(preg_match('/[^0-9A-Za-z]/',$_POST['username'])){
+   echo "Oops! Unknown letters at username!";
+}
+else if(preg_match('/[^0-9A-Za-z]/',$_POST['password'])){
+   echo "Oops! Unknown letters at password!";
+}
+else{
+   mysql_query("INSERT into users VALUES ('".$_POST['username']."', '".$_POST['password']."')") or die(mysql_error());
+   header('Location: index.html');
+}
+?>
