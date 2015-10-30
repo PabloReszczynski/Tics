@@ -52,7 +52,6 @@
 </html>
 
 <?php
-include ("connect.php");
 if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
    echo "Nombre de usuario ya ocupado!";
 }
