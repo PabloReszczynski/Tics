@@ -58,12 +58,14 @@ CREATE TABLE IF NOT EXISTS `Tutoria` (
 CREATE TABLE IF NOT EXISTS `Users` (
   `nombre` varchar(15) NOT NULL,
   `apellido` varchar(15) NOT NULL,
+ -- `sexo` varchar(20) NOT NULL,
   `avatar` varchar(20) NOT NULL,
   `email` varchar(30) NOT NULL,
   `username` varchar(10) NOT NULL,
   `password` varchar(100) NOT NULL,
   `status` int(11) NOT NULL,
   `tutoria` int(11) NOT NULL,
+  -- `fecharegistro` TIMESTAMP, fecha registro
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Aqui van los datos de los usuarios';
 

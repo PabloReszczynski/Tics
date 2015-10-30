@@ -17,31 +17,27 @@
             <form>
                 <div class="form-group">
                     <label for="Nombre">Nombre:</label>
-                    <input type="text" id="nombre" class="form-control"/>
+                    <input type="text" name="nombre" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label for="Apellido">Apellido:</label>
-                    <input type="text" id="Apellido" class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <label for="Sexo">Sexo: </label>
-                    <input type="text" id="Sexo" class="form-control"/>
+                    <input type="text" name="apellido" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label for="email">Email: </label>
-                    <input type="text" id="email" class="form-control"/>
+                    <input type="text" name="email" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label for="avatar">Avatar: </label>
-                    <input type="text" id="avatar" class="form-control"/>
+                    <input type="file" name="avatar"/>
                 </div>
                 <div class="form-group">
                     <label for="username">Username: </label>
-                    <input type="text" id="username" class="form-control"/>
+                    <input type="text" name="username" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password: </label>
-                    <input type="password" id="pwd" class="form-control"/>
+                    <input type="password" name="pwd" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-default" type="submit">Registrarse</button>
@@ -52,12 +48,17 @@
 </html>
 
 <?php
-if(mysql_num_rows(mysql_query("SELECT * from users WHERE username='" . $_POST['username'] . "'")) == 1){
-   echo "Nombre de usuario ya ocupado!";
-}
+require('connect.php');
+require('hash.php');
 
-else{
-   mysql_query("INSERT into users VALUES ('".$_POST['username']."', '".$_POST['password']."')") or die(mysql_error());
-   header('Location: index.html');
-}
+$name = $_POST['nombre'];
+$lastname = $_POST['apellido'];
+$email = $_POST['email'];
+$avatar = $_POST['avatar'];
+$username = $_POST['username'];
+$password = create_hash($_POST['password']);
+$timestamp = date('m/d/Y h:i:s a', time());
+
+$col = [$name, $lastname, $email, $avatar, $username, $password, $timestamp];
+insert_users($col);
 ?>
