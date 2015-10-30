@@ -36,7 +36,7 @@
                   <li><a href="profile.php">Perfil</a></li>
                   <li><a href="listaTutorias.php">Tutorías</a></li>
                   <li class="active"><a href="quienesSomos.php">Quienes somos</a></li>
-                  <li><a href="#">Contacto</a></li>
+                  <li><a href="contacto.php">Contacto</a></li>
               </ul>
               <form class="navbar-form navbar-right" role="search">
                   <div class="form-group">

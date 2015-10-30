@@ -27,22 +27,26 @@
       <!-- NAVBAR -->
       <nav class="navbar navbar-default">
           <div class="navbar-header">
-              <a class="navbar-brand" href="welcome2.php">Inicio</a>
+              <a class="navbar-brand" href="welcome2.php">
+                  <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+              </a>
           </div>
           <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
                   <li><a href="profile.php">Perfil</a></li>
                   <li class="active"><a href="listaTutorias.php">Tutorías</a></li>
                   <li><a href="quienesSomos.php">Quienes somos</a></li>
-                  <li><a href="#">Contacto</a></li>
+                  <li><a href="contacto.php">Contacto</a></li>
               </ul>
               <form class="navbar-form navbar-right" role="search">
                   <div class="form-group">
                       <input type="text" class="form-control" placeholder="Buscar Tutorías">
                   </div>
-                  <button type="submit" class="btn btn-default">Buscar</button>
+                  <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
               </form>
-              <ul class="nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
                 <li><a href="./closeSession.php">Cerrar sesión</a></li>
               </ul>
           </div>

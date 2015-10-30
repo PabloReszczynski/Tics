@@ -59,9 +59,16 @@
           <span>usuario@servidor.cl</span><br>
           <span>+56 9 9999 9999</span>
       </div>
+
       <div class="col-lg-3" style="">
           <button class="btn btn-default" style="float: right;">Editar perfil</button>
       </div>
   </div>
   </body>
 </html>
+<?php
+Include(connect.php);
+require(connect.php);
+If(isset($_REQUEST['submit'])!='')
+{
+    $sql = "UPDATE Users SET lastname='Doe' WHERE id=2";

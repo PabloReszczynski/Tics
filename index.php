@@ -53,6 +53,7 @@
 			</form>
 		</div>
 	</div>
+    <a href="registro.php">Regístrate</a>
 </div>
       <?php
         $error = '<span>Fallo en el inicio de sesión.</span>';
