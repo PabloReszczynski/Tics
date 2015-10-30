@@ -5,11 +5,11 @@
         <div id="container">
             <form>
                 <h1>Create Logon</h1>
-                <div class="line"><label for="username">Username *: </label><input type="text" id="username" /></div>
-                <div class="line"><label for="pwd">Password *: </label><input type="password" id="pwd" /></div>
+               
                 <div class="line"><label for="surname">Surname *: </label><input type="text" id="surname" /></div>
                 <div class="line"><label for="email">Email *: </label><input type="email" id="email" /></div>
-                <!-- Valid input types: http://www.w3schools.com/html5/html5_form_input_types.asp -->
+                <div class="line"><label for="username">Username *: </label><input type="text" id="username" /></div>
+                <div class="line"><label for="pwd">Password *: </label><input type="password" id="pwd" /></div>
                 <div class="line submit"><input type="submit" value="Submit" /></div>
                 <p>Note: Please make sure your details are correct before submitting form and that all fields marked with * are completed!.</p>
             </form>
