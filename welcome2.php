@@ -1,8 +1,11 @@
 <?php
-require("functions.php");
+require("connect.php");
 session_start();
+
+$conn=database_connect();
+
 if(!isset($_SESSION["user"])){
-  if(checkLogIn($_POST)){
+  if(checkLogIn($_POST, $conn)){
     $_SESSION["user"] = $_POST["username"];
     $_SESSION["pass"] = $_POST["pass"];
     $_SESSION["error"] = "no";
@@ -68,3 +71,4 @@ if(!isset($_SESSION["user"])){
     </div>
   </body>
 </html>
+<?php mysqli_close($conn); ?>

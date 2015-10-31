@@ -1,7 +1,8 @@
 <?php
-    require("functions.php");
+    require("connect.php");
     session_start();
     redirectError();
+    $conn=database_connect();
 ?>
 <html lang="es">
   <head>
@@ -50,25 +51,31 @@
   </nav>
   <!-- -->
   <div class="row-fluid">
-      <div class="col-lg-3">
-          <img src="resources/cat.jpg" alt="profile pic" class="img-thumbnail img-responsive"/>
-      </div>
-      <div class="col-lg-6">
-          <h2>Nombre completo<br>
-          <small>Nombre de usuario</small></h2>
-          <span>usuario@servidor.cl</span><br>
-          <span>+56 9 9999 9999</span>
-      </div>
+      <?php
+        $select = "SELECT * FROM Users WHERE username = '".$_SESSION['user']."';";
+        $result = mysqli_query($conn, $select);
+        $row = mysqli_fetch_assoc($result);
 
-      <div class="col-lg-3" style="">
-          <button class="btn btn-default" style="float: right;">Editar perfil</button>
-      </div>
+        echo "<div class='col-lg-3'>
+            <img src='resources/cat.jpg' alt='profile pic' class='img-thumbnail img-responsive'/>
+        </div>
+        <div class='col-lg-6'>
+            <h2>".$row['nombre']." ".$row['apellido']."<br>
+            <small>".$row['username']."</small></h2>
+            <span>".$row['email']."</span><br>
+        </div>
+
+        <div class='col-lg-3' style=''>
+            <a href='editarUsuario.php'><button class='btn btn-default' style='float: right;'>Editar perfil</button></a>
+        </div>";
+      ?>
   </div>
   </body>
 </html>
 <?php
-Include(connect.php);
-require(connect.php);
-If(isset($_REQUEST['submit'])!='')
+if(isset($_REQUEST['submit'])!='')
 {
     $sql = "UPDATE Users SET lastname='Doe' WHERE id=2";
+}
+mysqli_close($conn);
+?>

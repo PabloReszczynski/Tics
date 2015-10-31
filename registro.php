@@ -47,28 +47,27 @@
         <div class="col-lg-4">
 <?php
 require('connect.php');
-require('hash.php');
+
+$conn=database_connect();
 
 if (isset($_POST['nombre'])){
-    
+
     $col = array(
         'nombre'    => $_POST['nombre'],
         'apellido'  => $_POST['apellido'],
         'email'     => $_POST['email'],
         'avatar'    => $_POST['avatar'],
         'username'  => $_POST['username'],
-        'password'  => create_hash($_POST['password']),
-        'status'    => 0,
-        'timestamp' => date('m/d/Y h:i:s a', time())
+        'password'  => $_POST['pwd'],
+        'status'    => 0
     );
-    
-    insert_users($col);
-    
+
+    insert_users($col, $conn);
+
     mysqli_close($conn);
 }
 ?>
+<a href="./welcome2.php">Volver al inicio</a>
         </div>
     </body>
 </html>
-
-

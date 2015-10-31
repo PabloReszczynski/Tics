@@ -58,16 +58,6 @@
       <?php
         $error = '<span>Fallo en el inicio de sesión.</span>';
 
-        /*if (isset($_POST["username"]) && isset($_POST["pass"])){
-            if ($_POST["username"] === "user" && $_POST["pass"] === "pass"){
-                $_SESSION["user"] = $_POST["username"];
-                $_SESSION["pass"] = $_POST["pass"];
-            }
-            else{
-                echo $error;
-            }
-        }*/
-
         if (isset($_SESSION["error"]) && $_SESSION["error"]==="error"){
           echo $error;
           session_destroy();
